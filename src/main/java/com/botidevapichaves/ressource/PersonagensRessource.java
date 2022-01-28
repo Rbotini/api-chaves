@@ -20,10 +20,15 @@ public class PersonagensRessource{
 	@Autowired
 	PersonagensRepository personagensRepository;
 	
-	
+	@GetMapping("/personagens")
 	public List<Personagem>listar(){
 		return personagensRepository.findAll();
 		
+	}
+	
+	@PostMapping("/personagens")
+	public Personagem salvar(@RequestBody Personagem personagem) {
+		return personagensRepository.save(personagem);
 	}
 
 }
