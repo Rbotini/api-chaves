@@ -18,19 +18,11 @@ import com.botidevapichaves.repository.PersonagensRepository;
 public class PersonagensRessource{
 	
 	@Autowired
-	
 	PersonagensRepository personagensRepository;
 	
-	@GetMapping("/personagens")
 	
-	public List<Personagem> listar(){
+	public List<Personagem>listar(){
 		return personagensRepository.findAll();
-	}
-	
-	@PostMapping("/personagens")
-	
-	public Personagem salvarPersonagem(@RequestBody Personagem personagem) {
-		return personagensRepository.save(personagem);
 		
 	}
 
